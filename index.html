@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="id" data-accent="violet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimly Asidiq Anwar — UI/UX Designer & Informatics Engineer</title>
+    <meta name="description" content="Portofolio resmi Jimly Asidiq Anwar — Lulusan S1 Teknik Informatika Universitas Pancasila (Lulus Unggul 2026, IPK 3.52) dengan keahlian dalam Web Development, UI/UX Design, dan Cyber Security.">
+    <meta name="keywords" content="Jimly Asidiq Anwar, Portofolio, UI/UX Designer, Web Developer, Cyber Security, Informatika, Universitas Pancasila">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Ambient Glow Orbs -->
+    <div class="ambient-glow glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow glow-2" aria-hidden="true"></div>
+    <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+    <!-- Custom Cursor Follower (Desktop) -->
+    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+    <!-- Floating Glass Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#about" class="site-brand">
+                <span class="brand-avatar">JA</span>
+                <span class="brand-name">Jimly<span class="brand-dot">.</span></span>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <nav class="nav-pill" id="nav-menu" aria-label="Navigasi Utama">
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link active">Tentang</a></li>
+                    <li><a href="#skills" class="nav-link">Keahlian</a></li>
+                    <li><a href="#education" class="nav-link">Pendidikan</a></li>
+                    <li><a href="#projects" class="nav-link">Proyek</a></li>
+                    <li><a href="#organization" class="nav-link">Organisasi</a></li>
+                    <li><a href="#contact" class="nav-link">Kontak</a></li>
+                </ul>
+            </nav>
+
+            <!-- Navbar Actions -->
+            <div class="nav-actions">
+                <!-- Color Theme Switcher -->
+                <div class="theme-picker" title="Ganti Aksen Warna">
+                    <button class="accent-btn violet active" data-color="violet" aria-label="Warna Violet"></button>
+                    <button class="accent-btn cyan" data-color="cyan" aria-label="Warna Cyan"></button>
+                    <button class="accent-btn emerald" data-color="emerald" aria-label="Warna Emerald"></button>
+                    <button class="accent-btn amber" data-color="amber" aria-label="Warna Amber"></button>
+                </div>
+
+                <!-- CV Quick Button -->
+                <a href="https://drive.google.com/file/d/1SxcFFrOFu6Bwf8lRTG9nFzmmCiIEUXzR/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-nav">
+                    <span>CV Saya</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                </a>
+
+                <!-- Mobile Hamburger Button -->
+                <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer / Sidebar -->
+        <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu Navigasi Mobile">
+            <div class="mobile-drawer-header">
+                <div class="mobile-drawer-user">
+                    <span class="brand-avatar-mini">JA</span>
+                    <div class="mobile-user-info">
+                        <span class="mobile-user-name">Jimly Asidiq Anwar</span>
+                        <span class="mobile-user-title">Informatics &bull; Univ. Pancasila</span>
+                    </div>
+                </div>
+                <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Tutup Menu">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <ul class="mobile-nav-links">
+                <li>
+                    <a href="#about" class="mobile-nav-link active">
+                        <span class="mobile-nav-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </span>
+                        <span class="mobile-nav-label">Tentang Saya</span>
+                        <svg class="mobile-nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#skills" class="mobile-nav-link">
+                        <span class="mobile-nav-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                        </span>
+                        <span class="mobile-nav-label">Keahlian & Tooling</span>
+                        <svg class="mobile-nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#education" class="mobile-nav-link">
+                        <span class="mobile-nav-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        </span>
+                        <span class="mobile-nav-label">Riwayat Pendidikan</span>
+                        <svg class="mobile-nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#projects" class="mobile-nav-link">
+                        <span class="mobile-nav-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </span>
+                        <span class="mobile-nav-label">Pengalaman & Proyek</span>
+                        <svg class="mobile-nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#organization" class="mobile-nav-link">
+                        <span class="mobile-nav-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="mobile-nav-label">Organisasi & Leadership</span>
+                        <svg class="mobile-nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact" class="mobile-nav-link">
+                        <span class="mobile-nav-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </span>
+                        <span class="mobile-nav-label">Hubungi Saya</span>
+                        <svg class="mobile-nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="mobile-drawer-footer">
+                <a href="https://drive.google.com/file/d/1SxcFFrOFu6Bwf8lRTG9nFzmmCiIEUXzR/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary full-width">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    <span>Unduh CV Lengkap</span>
+                </a>
+                <div class="mobile-drawer-socials">
+                    <a href="https://www.instagram.com/jimlyasidiq" target="_blank" rel="noopener noreferrer" class="drawer-social-link">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        <span>@jimlyasidiq</span>
+                    </a>
+                    <a href="mailto:jimlyasidiq@gmail.com" class="drawer-social-link">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>jimlyasidiq@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="about" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <!-- Status Badge -->
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Available for Opportunities & Collaborations</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="hero-title">
+                        Halo! Saya <span class="gradient-text">Jimly Asidiq Anwar</span> 👋
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        Lulusan S1 Teknik Informatika <span class="highlight">Universitas Pancasila (Lulus Unggul 2026 &bull; IPK 3.52)</span> dengan passion mendalam di bidang 
+                        <strong class="text-white">Web Development</strong>, <strong class="text-white">UI/UX Design</strong>, dan <strong class="text-white">Cyber Security</strong>. 
+                        Berpengalaman merancang sistem informasi terintegrasi, arsitektur penjualan hybrid, antarmuka intuitif, serta pengujian penetrasi keamanan siber.
+                    </p>
+
+                    <!-- Hero Quick Stats -->
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <span class="stat-value">3.52</span>
+                            <span class="stat-label">IPK Kelulusan (Lulus Unggul)</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">20+</span>
+                            <span class="stat-label">Celah Keamanan Terdeteksi</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">8+</span>
+                            <span class="stat-label">Proyek & Pengalaman Karir</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Actions -->
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Lihat Karya & Proyek</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1SxcFFrOFu6Bwf8lRTG9nFzmmCiIEUXzR/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                            <span>Unduh CV</span>
+                        </a>
+                        <button class="btn btn-icon" id="copy-email-hero-btn" title="Salin Email (jimlyasidiq@gmail.com)" aria-label="Salin Email Jimly">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </button>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="hero-socials">
+                        <span class="social-label">Connect:</span>
+                        <a href="https://www.instagram.com/jimlyasidiq" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                            <span>@jimlyasidiq</span>
+                        </a>
+                        <a href="mailto:jimlyasidiq@gmail.com" class="social-pill" aria-label="Email">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span>jimlyasidiq@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual / Avatar Card -->
+                <div class="hero-visual">
+                    <div class="avatar-card-wrapper">
+                        <div class="avatar-glow-ring"></div>
+                        <div class="avatar-card">
+                            <img src="assets/profil.JPG" alt="Jimly Asidiq Anwar" class="avatar-img" loading="eager">
+                            <div class="avatar-overlay-info">
+                                <span class="avatar-name">Jimly Asidiq Anwar</span>
+                                <span class="avatar-sub">S1 Teknik Informatika &bull; Univ. Pancasila</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badges -->
+                        <div class="floating-badge badge-1" data-parallax="0.05">
+                            <div class="badge-icon purple">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                            </div>
+                            <div class="badge-info">
+                                <span class="badge-title">UI/UX Specialist</span>
+                                <span class="badge-meta">Figma & Prototyping</span>
+                            </div>
+                        </div>
+
+                        <div class="floating-badge badge-2" data-parallax="-0.04">
+                            <div class="badge-icon cyan">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="badge-info">
+                                <span class="badge-title">Cyber Security</span>
+                                <span class="badge-meta">Pentest & Burp Suite</span>
+                            </div>
+                        </div>
+
+                        <div class="floating-badge badge-3" data-parallax="0.03">
+                            <div class="badge-icon green">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            </div>
+                            <div class="badge-info">
+                                <span class="badge-title">Web Development</span>
+                                <span class="badge-meta">Laravel & Modern JS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Marquee / Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Skills & Tooling</span>
+                    <h2 class="section-title">Teknologi & Keahlian Utama</h2>
+                    <p class="section-desc">Kombinasi kemampuan visual desain antarmuka, rekayasa kode terstruktur, dan pemahaman keamanan siber.</p>
+                </div>
+
+                <div class="skills-bento-grid">
+                    <!-- Bento Box 1: UI/UX & Design -->
+                    <div class="skill-card bento-card">
+                        <div class="card-icon-box purple">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>Merancang alur pengguna (user journey), wireframing, high-fidelity mockups, dan prototipe interaktif yang fokus pada kemudahan pakai (usability).</p>
+                        <div class="skill-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">User Research</span>
+                            <span class="tag">Interactive Prototyping</span>
+                            <span class="tag">Design System</span>
+                            <span class="tag">Wireframing</span>
+                        </div>
+                    </div>
+
+                    <!-- Bento Box 2: Web Engineering -->
+                    <div class="skill-card bento-card">
+                        <div class="card-icon-box cyan">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Membangun sistem informasi dan website fungsional berbasis arsitektur MVC, database relasional, dan antarmuka responsif.</p>
+                        <div class="skill-tags">
+                            <span class="tag">PHP (Laravel)</span>
+                            <span class="tag">JavaScript (ES6+)</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">HTML5 / CSS3</span>
+                            <span class="tag">RESTful API</span>
+                            <span class="tag">Git & GitHub</span>
+                        </div>
+                    </div>
+
+                    <!-- Bento Box 3: Cyber Security -->
+                    <div class="skill-card bento-card">
+                        <div class="card-icon-box red">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="1"/></svg>
+                        </div>
+                        <h3>Cyber Security</h3>
+                        <p>Pengujian penetrasi kerentanan website dan jaringan (penetration testing), analisis exploit, serta pelaporan bug keamanan berskala instansi.</p>
+                        <div class="skill-tags">
+                            <span class="tag">Burp Suite</span>
+                            <span class="tag">Penetration Testing</span>
+                            <span class="tag">Web Vulnerability</span>
+                            <span class="tag">Network Analysis</span>
+                            <span class="tag">Bug Reporting</span>
+                        </div>
+                    </div>
+
+                    <!-- Bento Box 4: Soft Skills & Teamwork -->
+                    <div class="skill-card bento-card">
+                        <div class="card-icon-box green">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3>Kolaborasi & Manajemen</h3>
+                        <p>Pengalaman berorganisasi sebagai BPH dan Bendahara, terbiasa komunikasi terstruktur, problem-solving cepat, dan manajemen logistik/dana.</p>
+                        <div class="skill-tags">
+                            <span class="tag">Team Collaboration</span>
+                            <span class="tag">Budget Planning</span>
+                            <span class="tag">Creative Direction</span>
+                            <span class="tag">Photography & Drone</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Jejak Belajar</span>
+                    <h2 class="section-title">Riwayat Pendidikan</h2>
+                    <p class="section-desc">Pondasi akademis formal yang membentuk kapabilitas analitis dan komputasional saya.</p>
+                </div>
+
+                <div class="education-grid">
+                    <!-- Universitas Pancasila -->
+                    <div class="edu-card bento-card">
+                        <div class="edu-image-container">
+                            <img src="assets/UP.jpg" alt="Universitas Pancasila" class="edu-bg-img" loading="lazy">
+                            <div class="edu-badge-live alumni">Lulus Unggul</div>
+                        </div>
+                        <div class="edu-body">
+                            <div class="edu-meta-top">
+                                <span class="edu-year">2022 — 2026</span>
+                                <span class="edu-gpa">IPK: <strong>3.52</strong> / 4.00</span>
+                            </div>
+                            <h3 class="edu-school">Universitas Pancasila</h3>
+                            <h4 class="edu-degree">S1 Teknik Informatika &bull; Fakultas Teknik</h4>
+                            <p class="edu-desc">
+                                Mempelajari rekayasa perangkat lunak, arsitektur basis data, sistem informasi hybrid, dan keamanan siber. Berhasil menyelesaikan studi tepat waktu pada tahun 2026 dengan predikat Lulus Unggul serta meraih IPK 3.52.
+                            </p>
+                            <div class="edu-highlights">
+                                <span class="highlight-pill">Fakultas Teknik</span>
+                                <span class="highlight-pill">Teknik Informatika</span>
+                                <span class="highlight-pill">Lulus Unggul 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SMA Negeri 1 Sukabumi -->
+                    <div class="edu-card bento-card">
+                        <div class="edu-image-container">
+                            <img src="assets/Sekolah.jpg" alt="SMA Negeri 1 Sukabumi" class="edu-bg-img" loading="lazy">
+                            <div class="edu-badge-live alumni">Alumni</div>
+                        </div>
+                        <div class="edu-body">
+                            <div class="edu-meta-top">
+                                <span class="edu-year">2019 — 2022</span>
+                                <span class="edu-status">Lulus Unggul</span>
+                            </div>
+                            <h3 class="edu-school">SMA Negeri 1 Sukabumi</h3>
+                            <h4 class="edu-degree">Peminatan MIPA (Ilmu Pengetahuan Alam)</h4>
+                            <p class="edu-desc">
+                                Membangun pemikiran logika analitis yang kuat serta aktif dalam kegiatan kreatif sekolah, termasuk kepanitiaan buku tahunan sekolah sebagai tim desain dan dokumentasi visual.
+                            </p>
+                            <div class="edu-highlights">
+                                <span class="highlight-pill">MIPA</span>
+                                <span class="highlight-pill">Dokumentasi & Desain</span>
+                                <span class="highlight-pill">Sukabumi, Jawa Barat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Experience & Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portfolio Showcase</span>
+                    <h2 class="section-title">Pengalaman Akademik & Proyek</h2>
+                    <p class="section-desc">Penerapan ilmu nyata dalam proyek studi independen, UI/UX prototyping, dan rekayasa web.</p>
+
+                    <!-- Filter Controls -->
+                    <div class="filter-controls" role="tablist">
+                        <button class="filter-btn active" data-filter="all">Semua Proyek (7)</button>
+                        <button class="filter-btn" data-filter="uiux">UI/UX Design</button>
+                        <button class="filter-btn" data-filter="web">Web Engineering</button>
+                        <button class="filter-btn" data-filter="security">Cyber Security</button>
+                    </div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project Skripsi: Optik Optihouse -->
+                    <article class="project-card bento-card" data-category="web uiux" data-modal="modal-optihouse">
+                        <div class="project-thumb-wrap">
+                            <img src="assets/optihouse.jpg" alt="Sistem Informasi Penjualan Web Optik Optihouse" class="project-thumb" loading="lazy">
+                            <div class="project-tag-overlay">
+                                <span class="pill-skripsi">🎓 Proyek Skripsi S1</span>
+                            </div>
+                            <div class="project-hover-backdrop">
+                                <span class="btn-preview">Lihat Detail Lengkap ↗</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-date">2025 — 2026</span>
+                                <span class="project-badge">Optik Optihouse</span>
+                            </div>
+                            <h3 class="project-title">Sistem Informasi Penjualan Berbasis Web — Optik Optihouse</h3>
+                            <p class="project-snippet">
+                                Proyek skripsi yang merancang dan membangun sistem informasi penjualan optik komprehensif, menggabungkan transaksi offline (Point of Sale kasir toko) dan online (e-commerce & Virtual Try-On) dengan sinkronisasi stok terpusat.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Laravel PHP</span>
+                                <span class="tag">Point of Sale (POS)</span>
+                                <span class="tag">Virtual Try-On</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">6 Multi-Role</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Magang: PT Menara Indonesia -->
+                    <article class="project-card bento-card" data-category="uiux" data-modal="modal-menara">
+                        <div class="project-thumb-wrap">
+                            <img src="assets/menara.jpg" alt="PT Menara Indonesia - UI/UX Designer Magang" class="project-thumb" loading="lazy">
+                            <div class="project-tag-overlay">
+                                <span class="pill-intern">💼 Magang UI/UX</span>
+                            </div>
+                            <div class="project-hover-backdrop">
+                                <span class="btn-preview">Lihat Pengalaman Lengkap ↗</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-date">Agu 2025 — Jan 2026</span>
+                                <span class="project-badge">PT Menara Indonesia</span>
+                            </div>
+                            <h3 class="project-title">UI/UX Designer — PT Menara Indonesia (Magang Industri)</h3>
+                            <p class="project-snippet">
+                                Berperan sebagai UI/UX Designer di Tangerang, merancang antarmuka produk digital Kerjadiluar.id dan Mknows.com di Figma, menyusun wireframe hingga prototipe interaktif, serta berkolaborasi erat dengan tim developer.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">PT Menara Indonesia</span>
+                                <span class="tag">UI/UX Magang</span>
+                                <span class="tag">Kerjadiluar.id</span>
+                                <span class="tag">Mknows.com</span>
+                                <span class="tag">Figma</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project: Kerjadiluar.id (PT Menara Indonesia) -->
+                    <article class="project-card bento-card" data-category="uiux" data-modal="modal-kerjadiluar">
+                        <div class="project-thumb-wrap">
+                            <img src="assets/kerjadiluar.jpg" alt="Kerjadiluar.id - Desain UI/UX Platform Karir Global" class="project-thumb" loading="lazy">
+                            <div class="project-tag-overlay">
+                                <span class="pill-uiux">🎨 UI/UX &bull; Figma</span>
+                            </div>
+                            <div class="project-hover-backdrop">
+                                <span class="btn-preview">Lihat Desain Figma ↗</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-date">Agu 2025 — Jan 2026</span>
+                                <span class="project-badge">PT Menara Indonesia</span>
+                            </div>
+                            <h3 class="project-title">Kerjadiluar.id — Desain UI/UX Platform Karir Global</h3>
+                            <p class="project-snippet">
+                                Menyusun rancangan antarmuka pengguna menyeluruh untuk website Kerjadiluar.id menggunakan Figma, mulai dari pembuatan wireframe, alur navigasi pencarian kerja luar negeri, hingga prototipe interaktif dan developer handoff.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">Kerjadiluar.id</span>
+                                <span class="tag">Global Career</span>
+                                <span class="tag">Interactive Prototype</span>
+                                <span class="tag">Developer Handoff</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project: Mknows.com (PT Menara Indonesia) -->
+                    <article class="project-card bento-card" data-category="uiux" data-modal="modal-mknows">
+                        <div class="project-thumb-wrap">
+                            <img src="assets/mknows.jpg" alt="Mknows.com - Redesain UI/UX Portal Edukasi" class="project-thumb" loading="lazy">
+                            <div class="project-tag-overlay">
+                                <span class="pill-uiux">🎨 UI/UX &bull; Figma</span>
+                            </div>
+                            <div class="project-hover-backdrop">
+                                <span class="btn-preview">Lihat Desain Figma ↗</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-date">Agu 2025 — Jan 2026</span>
+                                <span class="project-badge">PT Menara Indonesia</span>
+                            </div>
+                            <h3 class="project-title">Mknows.com — Redesain UI/UX Portal Pelatihan & Edukasi</h3>
+                            <p class="project-snippet">
+                                Mendesain antarmuka Mknows.com yang difokuskan pada kemudahan membaca materi (content readability), navigasi intuitif silabus kursus korporat, serta design system terpadu di Figma.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">Mknows.com</span>
+                                <span class="tag">Corporate EdTech</span>
+                                <span class="tag">Design System</span>
+                                <span class="tag">Usability Testing</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 1: Gama Multi Group -->
+                    <article class="project-card bento-card" data-category="security" data-modal="modal-gama">
+                        <div class="project-thumb-wrap">
+                            <img src="assets/MULTIGAMA.png" alt="Gama Multi Group - Cyber Security Engineer" class="project-thumb" loading="lazy">
+                            <div class="project-tag-overlay">
+                                <span class="pill-cyber">🛡️ Studi Independen</span>
+                            </div>
+                            <div class="project-hover-backdrop">
+                                <span class="btn-preview">Lihat Detail Lengkap ↗</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-date">Sep 2024 — Des 2024</span>
+                                <span class="project-badge">Gama Multi Group</span>
+                            </div>
+                            <h3 class="project-title">Cyber Security Engineer — Penetration Testing</h3>
+                            <p class="project-snippet">
+                                Berpengalaman dalam pengujian penetrasi mendalam, mendeteksi lebih dari 20 celah keamanan (10 celah kritis) menggunakan Burp Suite, dan memberikan rekomendasi mitigasi perbaikan.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Burp Suite</span>
+                                <span class="tag">Penetration Testing</span>
+                                <span class="tag">Vulnerability Assessment</span>
+                                <span class="tag">Govt Site Reporting</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Web Upay UI/UX -->
+                    <article class="project-card bento-card" data-category="uiux" data-modal="modal-upay">
+                        <div class="project-thumb-wrap">
+                            <img src="assets/upay.png" alt="Desain Web Upay - UI/UX" class="project-thumb" loading="lazy">
+                            <div class="project-tag-overlay">
+                                <span class="pill-uiux">🎨 UI/UX Design</span>
+                            </div>
+                            <div class="project-hover-backdrop">
+                                <span class="btn-preview">Lihat Detail Lengkap ↗</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-date">2024</span>
+                                <span class="project-badge">Fintech & Payment UI</span>
+                            </div>
+                            <h3 class="project-title">Desain Web Upay — Antarmuka Pengguna & Prototipe</h3>
+                            <p class="project-snippet">
+                                Mendesain antarmuka pengguna menyeluruh untuk platform Upay menggunakan Figma dan implementasi HTML/CSS. Menjalankan riset pengguna untuk mewujudkan prototipe interaktif yang human-centered.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">User Research</span>
+                                <span class="tag">Interactive Prototype</span>
+                                <span class="tag">HTML/CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Apertix Photo Platform -->
+                    <article class="project-card bento-card" data-category="web" data-modal="modal-apertix">
+                        <div class="project-thumb-wrap">
+                            <img src="assets/apertix.png" alt="Apertix - Platform Penjualan Foto" class="project-thumb" loading="lazy">
+                            <div class="project-tag-overlay">
+                                <span class="pill-web">⚡ Fullstack System</span>
+                            </div>
+                            <div class="project-hover-backdrop">
+                                <span class="btn-preview">Lihat Detail Lengkap ↗</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-date">2024</span>
+                                <span class="project-badge">Laravel & MySQL</span>
+                            </div>
+                            <h3 class="project-title">Platform Penjualan Foto Apertix — Web Application</h3>
+                            <p class="project-snippet">
+                                Membangun sistem informasi penjualan foto digital berbasis framework Laravel (PHP) dan basis data MySQL. Dirancang dengan prinsip UI/UX modern untuk kemudahan transaksi dan navigasi pengguna.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Laravel PHP</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">UI/UX Interface</span>
+                                <span class="tag">Fullstack Web</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Non-Academic & Organization Section -->
+        <section id="organization" class="organization-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Leadership & Creative</span>
+                    <h2 class="section-title">Pengalaman Non-Akademik & Organisasi</h2>
+                    <p class="section-desc">Kiprah kepemimpinan, tanggung jawab manajerial, dan eksplorasi bakat multimedia fotografi.</p>
+                </div>
+
+                <div class="org-grid">
+                    <!-- Org 1: Photo UP -->
+                    <article class="org-card bento-card" data-modal="modal-photoup">
+                        <div class="org-thumb-wrap">
+                            <img src="assets/RTD.jpg" alt="Photo UP - Badan Pengurus Harian" class="org-thumb" loading="lazy">
+                            <div class="org-badge">Dec 2023 — Selesai</div>
+                        </div>
+                        <div class="org-content">
+                            <span class="org-role">BPH (Badan Pengurus Harian)</span>
+                            <h3 class="org-title">Photo UP (Komunitas Fotografi Kampus)</h3>
+                            <p class="org-desc">
+                                Bertanggung jawab penuh dalam pengelolaan inventaris dan perlengkapan fotografi profesional di sekretariat PHOTOUP serta memimpin koordinasi operasional kebutuhan teknis berbagai acara kampus.
+                            </p>
+                            <div class="org-pills">
+                                <span>Inventaris Fotografi</span>
+                                <span>Operasional Acara</span>
+                                <span>Manajemen Tim</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Org 2: Pameran DIKLAT 21 -->
+                    <article class="org-card bento-card" data-modal="modal-diklat">
+                        <div class="org-thumb-wrap">
+                            <img src="assets/PAMERAN.jpg" alt="Pameran Fotografi DIKLAT 21" class="org-thumb" loading="lazy">
+                            <div class="org-badge">Jul 2023 — Agu 2023</div>
+                        </div>
+                        <div class="org-content">
+                            <span class="org-role">Bendahara Pelaksana</span>
+                            <h3 class="org-title">Pameran Fotografi DIKLAT 21</h3>
+                            <p class="org-desc">
+                                Mengelola seluruh siklus sirkulasi keuangan pameran, menyusun rencana anggaran biaya (RAB), mengawasi arus kas masuk dan keluar secara transparan, serta berkoordinasi lintas divisi guna memastikan kelancaran dana acara.
+                            </p>
+                            <div class="org-pills">
+                                <span>Manajemen Anggaran</span>
+                                <span>Akuntabilitas Finansial</span>
+                                <span>Laporan Keuangan</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Org 3: BTS Sukabumi -->
+                    <article class="org-card bento-card" data-modal="modal-bts">
+                        <div class="org-thumb-wrap">
+                            <img src="assets/BTS.jpg" alt="Panitia Buku Tahunan Siswa" class="org-thumb" loading="lazy">
+                            <div class="org-badge">Jan 2022 — Selesai</div>
+                        </div>
+                        <div class="org-content">
+                            <span class="org-role">Divisi Desain & Dokumentasi</span>
+                            <h3 class="org-title">Panitia Buku Tahunan Siswa (BTS)</h3>
+                            <p class="org-desc">
+                                Menciptakan konsep visual dan desain tata letak awal sebagai panduan vendor percetakan, serta mengoperasikan kamera dan drone pribadi untuk dokumentasi estetis momen penting angkatan sekolah.
+                            </p>
+                            <div class="org-pills">
+                                <span>Creative Direction</span>
+                                <span>Drone Videography</span>
+                                <span>Vendor Liaison</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-card bento-card">
+                    <div class="contact-glow-backdrop" aria-hidden="true"></div>
+                    <div class="contact-content">
+                        <span class="section-tag">Let's Connect</span>
+                        <h2 class="contact-title">Tertarik Berkolaborasi atau Mengajak Saya Berdiskusi?</h2>
+                        <p class="contact-subtitle">
+                            Saya selalu antusias menyambut peluang baru di bidang UI/UX design, pengembangan sistem web, maupun eksplorasi keamanan siber. Feel free to reach out anytime!
+                        </p>
+
+                        <div class="contact-methods">
+                            <!-- Email Card -->
+                            <div class="contact-box">
+                                <div class="contact-box-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div class="contact-box-text">
+                                    <span class="contact-label">Email Langsung</span>
+                                    <a href="mailto:jimlyasidiq@gmail.com" class="contact-value">jimlyasidiq@gmail.com</a>
+                                </div>
+                                <button class="btn-copy-small" id="copy-email-btn" title="Salin Email">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                    <span>Salin</span>
+                                </button>
+                            </div>
+
+                            <!-- Instagram Card -->
+                            <div class="contact-box">
+                                <div class="contact-box-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                                </div>
+                                <div class="contact-box-text">
+                                    <span class="contact-label">Instagram Profil</span>
+                                    <a href="https://www.instagram.com/jimlyasidiq" target="_blank" rel="noopener noreferrer" class="contact-value">@jimlyasidiq</a>
+                                </div>
+                                <a href="https://www.instagram.com/jimlyasidiq" target="_blank" rel="noopener noreferrer" class="btn-copy-small">
+                                    <span>Buka ↗</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-cta-row">
+                            <a href="mailto:jimlyasidiq@gmail.com" class="btn btn-primary btn-large">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <span>Kirim Pesan Email</span>
+                            </a>
+                            <a href="https://drive.google.com/file/d/1SxcFFrOFu6Bwf8lRTG9nFzmmCiIEUXzR/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-large">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                                <span>Unduh Resume / CV</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <span class="brand-avatar-mini">JA</span>
+                <span class="footer-text">&copy; 2026 <strong>Jimly Asidiq Anwar</strong>. Crafted with precision & modern aesthetics.</span>
+            </div>
+            <div class="footer-links">
+                <a href="#about">Tentang</a>
+                <a href="#skills">Keahlian</a>
+                <a href="#projects">Proyek</a>
+                <a href="https://www.instagram.com/jimlyasidiq" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="mailto:jimlyasidiq@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Project Modal Lightbox -->
+    <div class="modal-backdrop" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="modal-close" aria-label="Tutup Modal">&times;</button>
+            <div class="modal-content" id="modal-content">
+                <!-- Dynamically injected via script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-notification" id="toast-notification" role="status" aria-live="polite">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message" id="toast-message">Email berhasil disalin ke clipboard!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
